@@ -13,7 +13,7 @@ def get_titles(urls, data = None):
     for title in titles:
         if(keyword in title.get_text()):
             data = {
-                'title': title.get_text()
+                'title': title.get_text().lstrip('【公告】\r\n                        \t      ').rstrip('                        \t\t')
             }
         else:
             continue
